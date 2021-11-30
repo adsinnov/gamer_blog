@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+
+<main>
+
+<section class="pt-4">
+	<div class="container">
+		<div class="row">
+      <div class="col-12">
+				<div class="border p-4 text-center rounded-3">
+					<h1>Search Results</h1>
+					<nav class="d-flex justify-content-center" aria-label="breadcrumb">
+						<ol class="breadcrumb breadcrumb-dots m-0">
+							<li class="breadcrumb-item"><a href="http://127.0.0.1:8888/"><i class="bi bi-house me-1"></i> Home</a></li>
+							<li class="breadcrumb-item active">All post</li>
+						</ol>
+					</nav>
+				</div>
+      </div>
+    </div>
+	</div>
+</section>
+
+
+<section class="position-relative pt-0">
+    <div class="container" data-sticky-container>
+        <div class="row">
+            <!-- Main Post START -->
+            <div class="col-lg-9">
+                <!-- Card item START -->
+				{% if search_results %}
+                {% for result in search_results %}
+                <div class="card mb-4">
+                    <div class="row">
+                        <div class="col-md-5">
+
+                            <picture>
+                                <source srcset="" type="image/webp">
+                                <img class="rounded-3" src="" alt="">
+                            </picture>
+                        </div>
+                        <div class="col-md-7 mt-3 mt-md-0">
+
+                            <h3><a href="{% pageurl result %}"
+                                    class="btn-link stretched-link text-reset">{{ result }}</a></h3>
+                            <p>{% if result.search_description %}
+                        {{ result.search_description|safe }}
+                    {% endif %}/p>
+
+                {% endfor %}
+
+            </div>
+            <!-- Main Post END -->
+
+            <!-- Sidebar START -->
+            <div class="col-lg-3 mt-5 mt-lg-0">
+                <div data-sticky data-margin-top="80" data-sticky-for="767">
+                    <!-- Trending topics widget START -->
+                    <div>
+                        <h4 class="mb-3">Trending topics</h4>
+                        <!-- Category item -->
+                        <div class="text-center mb-3 card-bg-scale position-relative overflow-hidden rounded"
+                            style="background: rgb(2,0,36);background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,121,12,1) 59%, rgba(0,212,255,1) 100%); background-position: center left; background-size: cover;">
+                            <div class="bg-dark-overlay-4 p-3">
+                                <a href="/xbox" class="stretched-link btn-link fw-bold text-white h5">XBOX</a>
+                            </div>
+                        </div>
+                        <!-- Category item -->
+                        <div class="text-center mb-3 card-bg-scale position-relative overflow-hidden rounded"
+                            style="background: rgb(2,0,36);background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,64,121,1) 59%, rgba(0,212,255,1) 100%);background-position: center left; background-size: cover;">
+                            <div class="bg-dark-overlay-4 p-3">
+                                <a href="/ps4" class="stretched-link btn-link fw-bold text-white h5">PS4</a>
+                            </div>
+                        </div>
+                        <!-- Category item -->
+                        <div class="text-center mb-3 card-bg-scale position-relative overflow-hidden rounded"
+                            style="background: rgb(63,94,251);background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); background-position: center left; background-size: cover;">
+                            <div class="bg-dark-overlay-4 p-3">
+                                <a href="/pc-games" class="stretched-link btn-link fw-bold text-white h5">PC</a>
+                            </div>
+                        </div>
+                        <!-- Category item -->
+                        <div class="text-center mb-3 card-bg-scale position-relative overflow-hidden rounded"
+                            style="background: rgb(131,58,180);background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); background-position: center left; background-size: cover;">
+                            <div class="bg-dark-overlay-4 p-3">
+                                <a href="/reviews/" class="stretched-link btn-link fw-bold text-white h5">Game Reviews</a>
+                            </div>
+                        </div>
+                        <!-- Category item -->
+                        <div class="text-center mb-3 card-bg-scale position-relative overflow-hidden rounded"
+                            style="background: rgb(238,174,202);background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); background-position: center left; background-size: cover;">
+                            <div class="bg-dark-overlay-4 p-3">
+                                <a href="/mobile-games" class="stretched-link btn-link fw-bold text-white h5">Smart Phone Gaming</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Trending topics widget END -->
+
+                    <div class="row">
+                        <!-- Recent post widget START -->
+                        <div class="col-12 col-sm-6 col-lg-12">
+                            <h4 class="mt-4 mb-3">Advertisment</h4>
+                            <div style="background-color:red;width:300px;height:250px;">
+                            </div>
+                            <!-- Recent post widget END -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Sidebar END -->
+            </div> <!-- Row end -->
+        </div>
+	</div>
+</section>
+<!-- =======================
+Main content END -->
+
+
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+
+
+
+
+{% endblock %}

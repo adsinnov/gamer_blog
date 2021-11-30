@@ -1,0 +1,50 @@
+.paisa_container{
+width:728px;
+height:90px;
+}
+.paisa_container_LB{
+width:728px;
+height:90px;
+}
+
+@media only screen and (max-width: 600px) {
+.paisa_container{
+width:300px;
+height:250px;
+}
+
+.paisa_container_LB{
+width:320px;
+height:50px;
+}
+}
+
+.paisa_container::before{
+  content: "ADVERTISEMENT";
+    font-size: .7em;
+    color: #8a8a8a;
+    line-height: 20px;
+    display: flex;
+    place-items:center;
+    justify-content:center;
+    padding-bottom: 5px;
+    position: absolute;
+    margin-top: -25px;
+    width: 100%;
+    left: 0;
+    }
+
+ .paisa_container_LB::before{
+  content: "ADVERTISEMENT";
+    font-size: .7em;
+    color: #8a8a8a;
+    line-height: 20px;
+    display: flex;
+    place-items:center;
+    justify-content:center;
+    padding-bottom: 5px;
+    position: absolute;
+    margin-top: -25px;
+    width: 100%;
+    left: 0;
+    }

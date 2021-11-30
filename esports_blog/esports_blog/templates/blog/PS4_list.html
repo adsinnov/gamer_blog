@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+
+<main>
+
+<section class="pt-4">
+	<div class="container">
+		<div class="row">
+      <div class="col-12">
+				<div class="border p-4 text-center rounded-3">
+					<h1>{{page.title}}</h1>
+					<nav class="d-flex justify-content-center" aria-label="breadcrumb">
+						<ol class="breadcrumb breadcrumb-dots m-0">
+							<li class="breadcrumb-item"><a href="http://127.0.0.1:8888/"><i class="bi bi-house me-1"></i> Home</a></li>
+							<li class="breadcrumb-item active">All post</li>
+						</ol>
+					</nav>
+				</div>
+      </div>
+    </div>
+	</div>
+</section>
+
+<section class="position-relative pt-0">
+    <div class="container" data-sticky-container>
+        <div class="row">
+            <!-- Main Post START -->
+            <div class="col-lg-9">
+                <!-- Card item START -->
+                {% for card in PS4 %}
+                <div class="card mb-4">
+                    <div class="row">
+                        <div class="col-md-5">
+                            {% image card.Featured_image fill-376x250 as card_img %}
+                            {% image card.Featured_image fill-376x250 format-webp as webp_blog_img %}
+                            <picture>
+                                <source srcset="{{ webp_blog_img.url }}" type="image/webp">
+                                <img class="rounded-3" src="{{ card_img.url }}" alt="{{ card_img.alt }}">
+                            </picture>
+                        </div>
+                        <div class="col-md-7 mt-3 mt-md-0">
+                            <a href="#" class="badge bg-danger mb-2"><i
+                                    class="fas fa-circle me-2 small fw-bold"></i>PS4</a>
+                            <h3><a href="{{card.url}}"
+                                    class="btn-link stretched-link text-reset">{{card.title}}</a></h3>
+                            <p>{{card.intro}}</p>
+                            <!-- Card info -->
+                            <ul class="nav nav-divider align-items-center d-none d-sm-inline-block">
+                                <li class="nav-item">
+                                    <div class="nav-link">
+                                        <div class="d-flex align-items-center position-relative">
+                                            <div class="avatar avatar-xs">
+                                              <picture>
+                                                        {% image card.author_image fill-35x35 as author_img %}
+                                                        {% image card.author_image fill-35x35 format-webp as webp_author_img %}
+                                                        <source srcset="{{ webp_author_img.url }}" type="image/webp">
+                                                        <img class="avatar-img rounded-circle" src="{{ author_img.url }}"
+                                                            alt="avatar">
+                                                </picture>
+                                            </div>
+                                            <span class="ms-3">by <a href="#"
+                                                    class="stretched-link text-reset btn-link">{{card.author}}</a></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">{{card.date}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card item END -->
+                {% endfor %}
+                <!-- Pagination START -->
+                {% if PS4.paginator.num_pages > 1 %}
+                <nav class="my-5" aria-label="navigation">
+                    <ul class="pagination d-inline-block d-md-flex justify-content-center">
+                        {% if posts.has_previous %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="?page={{ PS4.previous_page_number }}" tabindex="-1"
+                                aria-disabled="true">Prev</a>
+                        </li>
+                        {% endif %}
+                        {% for page_num in PS4.paginator.page_range %}
+                        <li class="page-item {% if page_num == PS4.number %} active{% endif %}"><a class="page-link"
+                                href="?page={{ page_num }}"> {{ page_num }}</a></li>
+                        {% endfor %}
+                        {% if posts.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ PS4.next_page_number }}">Next</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                {% endif %}
+                <!-- Pagination END -->
+            </div>
+            <!-- Main Post END -->
+
+            <!-- Sidebar START -->
+            <div class="col-lg-3 mt-5 mt-lg-0">
+                <div data-sticky data-margin-top="80" data-sticky-for="767">
+                    <!-- Trending topics widget START -->
+                    <div>
+                        <h4 class="mb-3">Trending topics</h4>
+                        <!-- Category item -->
+                        <div class="text-center mb-3 card-bg-scale position-relative overflow-hidden rounded"
+                            style="background: rgb(2,0,36);background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,121,12,1) 59%, rgba(0,212,255,1) 100%); background-position: center left; background-size: cover;">
+                            <div class="bg-dark-overlay-4 p-3">
+                                <a href="/xbox" class="stretched-link btn-link fw-bold text-white h5">XBOX</a>
+                            </div>
+                        </div>
+                        <!-- Category item -->
+                        <div class="text-center mb-3 card-bg-scale position-relative overflow-hidden rounded"
+                            style="background: rgb(2,0,36);background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,64,121,1) 59%, rgba(0,212,255,1) 100%);background-position: center left; background-size: cover;">
+                            <div class="bg-dark-overlay-4 p-3">
+                                <a href="/hand-held-console" class="stretched-link btn-link fw-bold text-white h5">Hand Held Console</a>
+                            </div>
+                        </div>
+                        <!-- Category item -->
+                        <div class="text-center mb-3 card-bg-scale position-relative overflow-hidden rounded"
+                            style="background: rgb(63,94,251);background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); background-position: center left; background-size: cover;">
+                            <div class="bg-dark-overlay-4 p-3">
+                                <a href="/pc-games" class="stretched-link btn-link fw-bold text-white h5">PC</a>
+                            </div>
+                        </div>
+                        <!-- Category item -->
+                        <div class="text-center mb-3 card-bg-scale position-relative overflow-hidden rounded"
+                            style="background: rgb(131,58,180);background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); background-position: center left; background-size: cover;">
+                            <div class="bg-dark-overlay-4 p-3">
+                                <a href="/reviews/" class="stretched-link btn-link fw-bold text-white h5">Game Reviews</a>
+                            </div>
+                        </div>
+                        <!-- Category item -->
+                        <div class="text-center mb-3 card-bg-scale position-relative overflow-hidden rounded"
+                            style="background: rgb(238,174,202);background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); background-position: center left; background-size: cover;">
+                            <div class="bg-dark-overlay-4 p-3">
+                                <a href="/mobile-games" class="stretched-link btn-link fw-bold text-white h5">Smart Phone Gaming</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Trending topics widget END -->
+
+                    <div class="row">
+                        <!-- Recent post widget START -->
+                        <div class="col-12 col-sm-6 col-lg-12">
+                            <h4 class="mt-4 mb-3">Advertisment</h4>
+                            <div style="background-color:red;width:300px;height:250px;">
+                            </div>
+                            <!-- Recent post widget END -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Sidebar END -->
+            </div> <!-- Row end -->
+        </div>
+	</div>
+</section>
+<!-- =======================
+Main content END -->
+
+
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+
+
+
+
+{% endblock content %}

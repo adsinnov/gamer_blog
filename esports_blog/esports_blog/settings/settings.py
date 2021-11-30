@@ -1,0 +1,1 @@
+WAGTAILSEARCH_RESULTS_TEMPLATE = 'templates/search_query.html'

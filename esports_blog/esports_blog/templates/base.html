@@ -1,0 +1,233 @@
+{% load static wagtailcore_tags wagtailuserbar cache %}
+{% load compress %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{{ page.title }}</title>
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport"  content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="nuegamers.com">
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{{page.seo_title}}" />
+	<meta property="og:description" content="For New Gamers" />
+	<meta property="og:url" content="https://www.nuegamers.com/" />
+	<meta property="og:site_name" content="Nue Gamers" />
+	<meta name="description" content="{{page.search_description}}">
+	<meta name="keywords" content="{{page.keywords}}">
+
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{% static 'assets/images/logos/favicon.svg' %}">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+	{% compress css inline %}
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/font-awesome/css/all.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/tiny-slider/tiny-slider.css' %}">
+	<!-- Theme CSS -->
+	<link id="style-switch" rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/ads.css' %}">
+
+	{% endcompress %}
+	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S2S4VEZHG8"></script>
+	{% compress js inline %}
+
+	<script>
+	  window.googletag = window.googletag || {cmd: []};
+	  googletag.cmd.push(function() {
+                var REFRESH_KEY = "refresh";
+                var REFRESH_VALUE = "true";
+
+                var AdSize1 = googletag
+                    .sizeMapping()
+                    .addSize([992, 0], [[728, 90]]) //desktop
+                    .addSize([768, 0], [[300, 250]]) //tablet
+                    .addSize([320, 0], [[300, 250]]) //mobile
+                    .addSize(
+                        [0, 0],
+                        [
+                            [320, 50],
+                            [1, 1],
+                        ]
+                    ) //other
+                    .build();
+                    var AdSize2 = googletag
+                    .sizeMapping()
+                    .addSize([992, 0], [[728, 90]]) //desktop
+                    .addSize([768, 0], [[320, 50]]) //tablet
+                    .addSize([320, 0], [[320, 50]]) //mobile
+                    .addSize(
+                        [0, 0],
+                        [
+                            [320, 50],
+                            [1, 1],
+                        ]
+                    ) //other
+                    .build();
+		googletag.defineSlot('/21742552194/NueGamers/Leaderboard', [300,250], 'div-gpt-ad-01').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize2).addService(googletag.pubads());
+		googletag.defineSlot('/21742552194/NueGamers/MTF_1', [300,250], 'div-gpt-ad-02').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize1).addService(googletag.pubads());
+		googletag.defineSlot('/21742552194/NueGamers/MTF_2', [300,250], 'div-gpt-ad-03').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize1).addService(googletag.pubads());
+        googletag.defineSlot('/21742552194/NueGamers/MTF_3', [300,250], 'div-gpt-ad-04').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize1).addService(googletag.pubads());
+        googletag.defineSlot('/21742552194/NueGamers/BottomOverlay', [300,250], 'div-gpt-ad-06').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize2).addService(googletag.pubads());
+        var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 30;
+                googletag
+                    .pubads()
+                    .addEventListener("impressionViewable", function (event) {
+                        var slot = event.slot;
+                        if (slot.getTargeting(REFRESH_KEY).indexOf(REFRESH_VALUE) > -1) {
+                            setTimeout(function () {
+                                googletag.pubads().refresh([slot]);
+                            }, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
+                        }
+                    });
+		googletag.pubads().enableSingleRequest();
+		googletag.enableServices();
+		googletag.display('div-gpt-ad-02');
+		googletag.display('div-gpt-ad-03');
+		googletag.display('div-gpt-ad-04');
+
+	  });
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'G-S2S4VEZHG8');
+		</script>
+	{% endcompress %}
+</head>
+
+<body>
+{% cache 2592000 navigation page.id %}
+<!-- =======================
+Header START -->
+<header class="navbar-light navbar-sticky header-static">
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-expand-lg">
+		<div class="container">
+			<!-- Logo START -->
+			<a class="navbar-brand" href="/">
+				<img class="navbar-brand-item light-mode-item" src="{% static 'assets/images/logos/logo-light.svg'%}" alt="logo">
+				<img class="navbar-brand-item dark-mode-item" src="{% static 'assets/images/logos/logo-dark.svg'%}" alt="logo">
+			</a>
+			<!-- Logo END -->
+
+			<!-- Responsive navbar toggler -->
+			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="text-body h6 d-none d-sm-inline-block">Menu</span>
+			  <span class="navbar-toggler-icon"></span>
+		  </button>
+
+			<!-- Main navbar START -->
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<!-- Nav Search START -->
+				<div class="nav mt-3 mt-lg-0 px-4 flex-nowrap align-items-center">
+					<div class="nav-item w-100">
+						<form action="{% url 'search' %}" method="get" class="rounded position-relative">
+							<input class="form-control pe-5 bg-light" type="search" name="query" value="{{ search_query }}" placeholder="Search the blog" aria-label="Search">
+							<button class="btn bg-transparent px-2 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit" aria-label="search"><i class="bi bi-search fs-5"> </i></button>
+						</form>
+					</div>
+				</div>
+				<!-- Nav Search END -->
+				<ul class="navbar-nav navbar-nav-scroll ms-auto">
+
+					<!-- Nav item 1 Demos -->
+
+						<a role="button" type="button" class="nav-link" href="/" id="homeMenu" aria-haspopup="true" aria-expanded="false" >Home</a>
+						<a role="button" type="button" class="nav-link" href="/reviews/" id="Reviews" aria-haspopup="true" aria-expanded="false" >Reviews</a>
+						<a role="button" type="button" class="nav-link" href="/ps4/" id="Ps4" aria-haspopup="true" aria-expanded="false" >PS4</a>
+						<a role="button" type="button" class="nav-link" href="/xbox/" id="xbox" aria-haspopup="true" aria-expanded="false" >Xbox</a>
+						<a role="button" type="button" class="nav-link" href="/pc-games/" id="PC" aria-haspopup="true" aria-expanded="false" >PC</a>
+						<a role="button" type="button" class="nav-link" href="/mobile-games/" id="mobile" aria-haspopup="true" aria-expanded="false" >Mobile</a>
+
+				</ul>
+			</div>
+			<!-- Main navbar END -->
+<!--			&lt;!&ndash; Dark mode switch &ndash;&gt;-->
+<!--			<div class="modeswitch ms-4" id="darkModeSwitch">-->
+<!--				<div class="switch"></div>-->
+<!--			</div>-->
+		</div>
+	</nav>
+	<!-- Logo Nav END -->
+</header>
+{% endcache %}
+<!-- =======================
+Header END -->
+{% block content %}
+
+{% endblock content %}
+<!-- =======================
+Footer START -->
+{% cache 2592000 footer page.id %}
+<footer>
+	<div class="container">
+		<!-- About and Newsletter START -->
+		<div class="row bg-dark py-5 mx-0 card-header align-items-center text-center text-md-start">
+			<!-- Copyright -->
+			<div class="col-md-5 mb-3 mb-md-0">
+				<div class="text-primary-hover text-muted">©2021 <a href="#" class="text-reset btn-link" target="_blank">GamesIndian</a>. All rights reserved
+				</div>
+			</div>
+			<!-- Logo -->
+			<div class="col-md-3 mb-3 mb-md-0">
+				<img src="{% static 'assets/images/logos/logo-dark.svg'%}" alt="footer logo">
+			</div>
+			<!-- Social links -->
+			<div class="col-md-4">
+				<ul class="nav text-primary-hover justify-content-center justify-content-md-end">
+					<li class="nav-item">
+						<a aria-label="Facebook" class="nav-link px-2 fs-5" href="#"><i class="fab fa-facebook-square"></i></a>
+					</li>
+					<li class="nav-item">
+						<a aria-label="Twitter" class="nav-link px-2 fs-5" href="#"><i class="fab fa-twitter-square"></i></a>
+					</li>
+					<li class="nav-item">
+						<a aria-label="Linkedin" class="nav-link px-2 fs-5" href="#"><i class="fab fa-linkedin"></i></a>
+					</li>
+					<li class="nav-item">
+						<a aria-label="Youtube" class="nav-link px-2 fs-5" href="#"><i class="fab fa-youtube-square"></i></a>
+					</li>
+					<li class="nav-item">
+						<a aria-label="Vimeo" class="nav-link ps-2 pe-0 fs-5" href="#"><i class="fab fa-vimeo"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- About and Newsletter END -->
+	</div>
+</footer>
+
+<!-- =======================
+Footer END -->
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short"></i></div>
+
+<!-- =======================
+JS libraries, plugins and custom scripts -->
+{% compress js inline %}
+<!-- Bootstrap JS -->
+<script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Vendors -->
+<script src="{% static 'assets/vendor/tiny-slider/tiny-slider.js' %}"></script>
+<!-- Template Functions -->
+<script src="{% static 'assets/js/functions.js' %}"></script>
+{% endcompress %}
+
+{% endcache %}
+
+</body>
+</html>
