@@ -13,7 +13,7 @@ ALLOWED_HOSTS = ['*']
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 INSTALLED_APPS = INSTALLED_APPS + [
-    'debug_toolbar'
+    # 'debug_toolbar'
 ]
 
 MIDDLEWARE = MIDDLEWARE + [
@@ -21,16 +21,16 @@ MIDDLEWARE = MIDDLEWARE + [
     'htmlmin.middleware.HtmlMinifyMiddleware',
     'htmlmin.middleware.MarkRequestMiddleware',
 
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 
 ]
 
-INTERNAL_IPS = (
-
-    '127.0.0.1', '172.17.0.1'
-
-)
+# INTERNAL_IPS = (
+#
+#     '127.0.0.1', '172.17.0.1'
+#
+# )
 cwd = os.getcwd()
 CACHES = {
     "default" : {
