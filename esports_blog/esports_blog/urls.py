@@ -1,4 +1,3 @@
-import debug_toolbar
 from django.conf import settings
 from django.urls import include, path
 from django.contrib import admin
@@ -21,7 +20,7 @@ urlpatterns = [
     path('404/', default_views.page_not_found, kwargs={'exception': Exception("Page not Found")}),
     path('500/', default_views.server_error),
     path('search/', search_views.search, name='search'),
-    path('__debug__/', include(debug_toolbar.urls)),
+    path('', include('pwa.urls')),
 
 ]
 

@@ -1,9 +1,10 @@
 {% load static wagtailcore_tags wagtailuserbar cache %}
 {% load compress %}
-
+{% load pwa %} {% progressive_web_app_meta %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<title>{{ page.title }}</title>
 	<!-- Meta Tags -->
 	<meta charset="utf-8">
