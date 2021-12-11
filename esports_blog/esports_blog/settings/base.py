@@ -202,19 +202,25 @@ PWA_APP_START_URL = '/'
 PWA_APP_STATUS_BAR_COLOR = 'default'
 PWA_APP_ICONS = [
     {
-        'src': 'static/assets/images/logo-light.svg',
-        'sizes': '160x160'
+        'src': 'static/assets/images/Nue_Gamer_160.png',
+        'sizes': '160x160',
+        "type": "image/png",
+      "purpose": "any maskable"
+    },{
+      "src": 'static/assets/images/Nue_Gamer_512.png',
+      "type": "image/png",
+      "sizes": "512x512"
     }
 ]
 PWA_APP_ICONS_APPLE = [
     {
-        'src': 'static/assets/images/logo-light.svg',
+        'src': 'static/assets/images/Nue_Gamer_160.png',
         'sizes': '160x160'
     }
 ]
 PWA_APP_SPLASH_SCREEN = [
     {
-        'src': 'static/assets/images/logo-light.svg',
+        'src': 'static/assets/images/Nue_Gamer_512.png',
         'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
     }
 ]
