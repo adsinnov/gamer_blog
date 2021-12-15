@@ -548,39 +548,37 @@ var e = {
     },
     // END: Isotope
 
-//    // START: 14 Dark mode
-//    darkMode: function () {
-//
-//        var dark = document.querySelector('#darkModeSwitch');
-//        console.log(dark);
-//        if (e.isVariableDefined(dark)) {
-//            var dms = document.querySelector('#darkModeSwitch');
-//            var style = document.getElementById("style-switch");
-//            var mode = document.getElementsByTagName("BODY")[0];
-//            var dir = document.getElementsByTagName("html")[0].getAttribute('dir');
-//
-//            dms.addEventListener("click", function(){
-//              if(dir == 'rtl') {
-//                  if (style.getAttribute('href') == 'http://127.0.0.1:8888/static/assets/css/style-rtl.css') {
-//                      style.setAttribute('href', 'http://127.0.0.1:8888/static/assets/css/style-dark-rtl.css');
-//                  }
-//                  else {
-//                      style.setAttribute('href', 'http://127.0.0.1:8888/static/assets/css/style-rtl.css');
-//                  }
-//                }
-//                else {
-//                    if (style.getAttribute('href') == 'http://127.0.0.1:8888/static/assets/css/style-dark.css') {
-//                        style.setAttribute('href', 'http://127.0.0.1:8888/static/assets/css/style.css');
-//                    }
-//                    else {
-//                        style.setAttribute('href', 'http://127.0.0.1:8888/static/assets/css/style-dark.css');
-//                        console.log("yahi phat rha h");
-//                    }
-//                }
-//                mode.classList.toggle("dark-mode");
-//            });
-//        }
-//    },
+    // START: 14 Dark mode
+    darkMode: function () {
+
+        var dark = e.select('#darkModeSwitch');
+        if (e.isVariableDefined(dark)) {
+            var dms = document.querySelector('#darkModeSwitch');
+            var style = document.getElementById("style-switch");
+            var mode = document.getElementsByTagName("BODY")[0];
+            var dir = document.getElementsByTagName("html")[0].getAttribute('dir');
+
+            dms.addEventListener("click", function(){
+              if(dir == 'rtl') {
+                  if (style.getAttribute('href') == 'http://127.0.0.1:8888/static/assets/css/style-rtl.css') {
+                      style.setAttribute('href', 'http://127.0.0.1:8888/static/assets/css/style-dark-rtl.css');
+                  }
+                  else {
+                      style.setAttribute('href', 'http://127.0.0.1:8888/static/assets/css/style-rtl.css');
+                  } 
+                } 
+                else {
+                    if (style.getAttribute('href') == 'http://127.0.0.1:8888/static/assets/css/style-dark.css') {
+                        style.setAttribute('href', 'http://127.0.0.1:8888/static/assets/css/style.css');
+                    }
+                    else {
+                        style.setAttribute('href', 'http://127.0.0.1:8888/static/assets/css/style-dark.css');
+                    }
+                }
+                mode.classList.toggle("dark-mode");
+            }); 
+        }        
+    },
     // END: Dark mode
 
 
@@ -592,24 +590,30 @@ var pathArray = window.location.pathname.split('/');
 var url_active = pathArray[1];
 
 if (url_active == "reviews") {
+
+    console.log("Reviews");
     var element = document.getElementById("Reviews");
     element.classList.add("active");
 
 }
 else if (url_active == "ps4") {
-     var element = document.getElementById("Ps4");
+    console.log("PS4");
+    var element = document.getElementById("Ps4");
     element.classList.add("active");
 }
 else if (url_active == "xbox") {
+    console.log("xbox");
     var element = document.getElementById("xbox");
     element.classList.add("active");
 }
 else if (url_active == "pc-games") {
+    console.log("PC");
     var element = document.getElementById("PC");
     element.classList.add("active");
 }
 else if (url_active == "mobile-games") {
-     var element = document.getElementById("mobile");
+    console.log("Mobile");
+    var element = document.getElementById("mobile");
     element.classList.add("active");
 }
 else {
@@ -618,6 +622,10 @@ else {
 }
 
   }
+
+
     // END: Make Active
 };
+
+
  e.init();

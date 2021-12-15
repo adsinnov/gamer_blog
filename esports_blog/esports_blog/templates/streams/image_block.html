@@ -3,12 +3,13 @@
 <div class="row g-2">
           <div class="col-12">
             <!-- Image -->
+
             <figure class="figure">
               <picture>
                     {% image value.blog_image fill-990x556 as blog_big_img %}
 					{% image value.blog_image fill-990x556 format-webp as webp_blog_big_img %}
 					<source srcset="{{ webp_blog_big_img.url }}" type="image/webp">
-					<img class="rounded mt-1" src="{{ blog_big_img.url }}" alt="{{ blog_big_img.alt }}">
+					<img style="width: 100%; height:auto" class="rounded mt-1" src="{{ blog_big_img.url }}" alt="{{ blog_big_img.alt }}">
 				</picture>
 <!--              <figcaption class="figure-caption text-center">(Image via: <a class="text-reset" href="#">pexels.com</a>)</figcaption>-->
             </figure>

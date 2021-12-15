@@ -4967,7 +4967,7 @@ textarea.form-control-lg {
   border-color: rgba(0, 0, 0, 0.1);
 }
 .navbar-light .navbar-toggler-icon {
-  background-image: url("/static/assets/images/hamburger.svg");
+  background-image: url("/static/assets/images/hamburger.e93c0adf1b71.svg");
 }
 .navbar-light .navbar-text {
   color: #595d69;

@@ -23,10 +23,9 @@
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="{% static 'assets/images/logos/favicon.svg' %}">
 
-	<!-- Google Font -->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
 	{% compress css inline %}
+
 	<!-- Plugins CSS -->
 	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/font-awesome/css/all.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}">
@@ -37,9 +36,7 @@
 
 	{% endcompress %}
 	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S2S4VEZHG8"></script>
 	{% compress js inline %}
-
 	<script>
 	  window.googletag = window.googletag || {cmd: []};
 	  googletag.cmd.push(function() {
@@ -96,15 +93,6 @@
 
 	  });
 	</script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		  gtag('config', 'G-S2S4VEZHG8');
-		</script>
 	{% endcompress %}
 </head>
 
@@ -118,11 +106,10 @@ Header START -->
 		<div class="container">
 			<!-- Logo START -->
 			<a class="navbar-brand" href="/">
-				<img class="navbar-brand-item light-mode-item" src="{% static 'assets/images/logos/logo-light.svg'%}" alt="logo">
-				<img class="navbar-brand-item dark-mode-item" src="{% static 'assets/images/logos/logo-dark.svg'%}" alt="logo">
+				<img style="width: 105.53px;height: 40px;" class="navbar-brand-item light-mode-item" src="{% static 'assets/images/logos/logo-light.svg'%}" alt="logo">
 			</a>
 			<!-- Logo END -->
-			 <button id="myBtn" class="btn btn-sm btn-danger mb-0">Install App</button>
+			 <button id="myBtn" style="width: 99.47px; height: 34.28px" class="btn btn-sm btn-danger mb-0">Install App</button>
 			<!-- Responsive navbar toggler -->
 			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="text-body h6 d-none d-sm-inline-block">Menu</span>
@@ -146,12 +133,12 @@ Header START -->
 
 					<!-- Nav item 1 Demos -->
 
-						<a role="button" type="button" class="nav-link" href="/" id="homeMenu" aria-haspopup="true" aria-expanded="false" >Home</a>
-						<a role="button" type="button" class="nav-link" href="/reviews/" id="Reviews" aria-haspopup="true" aria-expanded="false" >Reviews</a>
-						<a role="button" type="button" class="nav-link" href="/ps4/" id="Ps4" aria-haspopup="true" aria-expanded="false" >PS4</a>
-						<a role="button" type="button" class="nav-link" href="/xbox/" id="xbox" aria-haspopup="true" aria-expanded="false" >Xbox</a>
-						<a role="button" type="button" class="nav-link" href="/pc-games/" id="PC" aria-haspopup="true" aria-expanded="false" >PC</a>
-						<a role="button" type="button" class="nav-link" href="/mobile-games/" id="mobile" aria-haspopup="true" aria-expanded="false" >Mobile</a>
+						<a role="button"  class="nav-link" href="/" id="homeMenu" aria-haspopup="true" aria-expanded="false" >Home</a>
+						<a role="button"  class="nav-link" href="/reviews/" id="Reviews" aria-haspopup="true" aria-expanded="false" >Reviews</a>
+						<a role="button"  class="nav-link" href="/ps4/" id="Ps4" aria-haspopup="true" aria-expanded="false" >PS4</a>
+						<a role="button"  class="nav-link" href="/xbox/" id="xbox" aria-haspopup="true" aria-expanded="false" >Xbox</a>
+						<a role="button" class="nav-link" href="/pc-games/" id="PC" aria-haspopup="true" aria-expanded="false" >PC</a>
+						<a role="button"  class="nav-link" href="/mobile-games/" id="mobile" aria-haspopup="true" aria-expanded="false" >Mobile</a>
 
 				</ul>
 			</div>
@@ -184,7 +171,7 @@ Footer START -->
 			</div>
 			<!-- Logo -->
 			<div class="col-md-3 mb-3 mb-md-0">
-				<img src="{% static 'assets/images/logos/logo-dark.svg'%}" alt="footer logo">
+				<img style="width: 320px; height: 121px;" src="{% static 'assets/images/logos/logo-dark.svg'%}" alt="footer logo">
 			</div>
 			<!-- Social links -->
 			<div class="col-md-4">
@@ -245,6 +232,7 @@ JS libraries, plugins and custom scripts -->
                 <div style="display: flex; justify-content: space-between;">
                 <h5 class="card-header">Install Nue Gamers App</h5>  <button type="button" class="close btn-close" data-bs-dismiss="alert"
                 aria-label="Close">x</button></div>
+
                 <div class="card-body" id="iOS_install" style="display: none;">
                     <p class="card-text">Install the app on your device to easily access it anytime. No app store. No
                         hassle. Light weight</p>
@@ -266,10 +254,13 @@ JS libraries, plugins and custom scripts -->
                         <li> Add to homescreen (Scroll Down)</li>
                     </ul>
                 </div>
-                <div class="card-body" id="Andriod_install">
+                <div class="card-body" id="Andriod_install" style="display: none;">
                     <p class="card-text">Install the app on your device to easily access it anytime. No app store. No
                         hassle. Light weight</p>
-                    <button class="btn btn-sm btn-danger">Add To Home Screen</button>
+                    <button id="butInstall" class="btn btn-sm btn-danger">Add To Home Screen</button>
+                </div>
+				<div class="card-body" id="Cannot_Install" style="display: none;">
+                    <p class="card-text">Your Browser does not support PWA Technology switch to chrome.</p>
                 </div>
             </div>
         </div>
@@ -307,4 +298,25 @@ JS libraries, plugins and custom scripts -->
 
 
 </body>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S2S4VEZHG8"></script>
+	{% compress js inline %}
+
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'G-S2S4VEZHG8');
+		</script>
+
+	{% endcompress %}
+<!--	&lt;!&ndash; Google Font &ndash;&gt;-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+<script src="{% static 'assets/js/pwa.js' %}"></script>
 </html>

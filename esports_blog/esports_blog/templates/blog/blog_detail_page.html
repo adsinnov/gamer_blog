@@ -68,7 +68,7 @@
 					 {% image self.Featured_image fill-820x421 as blog_img %}
 					{% image self.Featured_image fill-820x421 format-webp as webp_blog_img %}
 					<source srcset="{{ webp_blog_img.url }}" type="image/webp">
-					<img class="rounded mt-3" src="{{ blog_img.url }}" alt="{{ blog_img.alt }}">
+					<img  style ="object-fit: cover;width: 100%;height: auto;"class="rounded mt-3 custom_size_img" src="{{ blog_img.url }}" alt="{{ blog_img.alt }}">
 				</picture>
       </div>
     </div>
