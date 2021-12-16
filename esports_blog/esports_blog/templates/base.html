@@ -302,8 +302,6 @@ JS libraries, plugins and custom scripts -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S2S4VEZHG8"></script>
 	{% compress js inline %}
 
-
-
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 
 		<script>
@@ -312,11 +310,11 @@ JS libraries, plugins and custom scripts -->
 		  gtag('js', new Date());
 		  gtag('config', 'G-S2S4VEZHG8');
 		</script>
-
+<script src="{% static 'assets/js/pwa.js' %}"></script>
 	{% endcompress %}
 <!--	&lt;!&ndash; Google Font &ndash;&gt;-->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 
-<script src="{% static 'assets/js/pwa.js' %}"></script>
+
 </html>

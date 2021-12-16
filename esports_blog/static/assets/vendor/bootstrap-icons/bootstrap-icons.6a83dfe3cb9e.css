@@ -2,6 +2,7 @@
   font-family: "bootstrap-icons";
   src: url("./fonts/bootstrap-icons.638b6203b512.woff2?231ce25e89ab5804f9a6c427b8d325c9") format("woff2"),
 url("./fonts/bootstrap-icons.c427542933e5.woff?231ce25e89ab5804f9a6c427b8d325c9") format("woff");
+  font-display: swap;
 }
 
 [class^="bi-"]::before,
