@@ -3,164 +3,174 @@
 {% load wagtailcore_tags wagtailimages_tags cache %}
 
 
-
 {% block content %}
 {% cache 86400 detail_page_cache page.id %}
 
 <!-- **************** MAIN CONTENT START **************** -->
 <main>
-
-	<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "{{ page.title }}",
-  "description": "{{page.intro}}",
-	{% image self.Featured_image fill-820x421 as blog_img %}
-	{% image self.Featured_image fill-820x421 format-webp as webp_blog_img %}
-  "image": "{{ webp_blog_img.url }}",
-  "author": {
-    "@type": "Person",
-    "name": "{{page.author}}",
-    "url": "author page"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Nue Gamer",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{% static 'assets/images/logos/logo-light.svg'%}"
-    }
-  },
-  "datePublished": "{{page.date}}",
-  "dateModified": "{{page.date}}"
-}
-</script>
-<!-- ======================= Inner intro START ======================= -->
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-9 mx-auto pt-md-5">
-        <a href="#" class="badge bg-danger mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>{{page.categories}}</a>
-				<h1 class="display-4">{{ page.title }}</h1>
-        <p class="lead">{{page.intro}} </p>
-        <!-- Info -->
-        <ul class="nav nav-divider align-items-center">
-          <li class="nav-item mb-1">
-            <div class="nav-link">
-              by <a href="#" class="text-reset btn-link">{{page.author}}</a>
-            </div>
-          </li>
-          <li class="nav-item mb-1">{{page.date}}</li>
-        </ul>
-			<div class='d-flex justify-content-center mt-2'><div class="paisa_container_LB mt-3" id='div-gpt-ad-01'>
-  <script>
-    googletag.cmd.push(function() { googletag.display('div-gpt-ad-01'); });
-  </script>
-</div></div>
-				<picture style="
+    {% image self.Featured_image fill-820x421 as blog_img %}
+    {% image self.Featured_image fill-820x421 format-webp as webp_blog_img %}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "{{ page.title }}",
+            "description": "{{page.intro}}",
+            "image": "{{ webp_blog_img.url }}",
+            "author": {
+                "@type": "Person",
+                "name": "{{page.author}}",
+                "url": "author page"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Nue Gamer",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "{% static 'assets/images/logos/logo-light.svg'%}"
+                }
+            },
+            "datePublished": "{{page.date}}",
+            "dateModified": "{{page.date}}"
+        }
+    </script>
+    <!-- ======================= Inner intro START ======================= -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 mx-auto pt-md-5">
+                    <a href="#" class="badge bg-danger mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>{{page.categories}}</a>
+                    <h1 class="display-4">{{ page.title }}</h1>
+                    <p class="lead">{{page.intro}} </p>
+                    <!-- Info -->
+                    <ul class="nav nav-divider align-items-center">
+                        <li class="nav-item mb-1">
+                            <div class="nav-link">
+                                by <a href="#" class="text-reset btn-link">{{page.author}}</a>
+                            </div>
+                        </li>
+                        <li class="nav-item mb-1">{{page.date}}</li>
+                    </ul>
+                    <div class='d-flex justify-content-center mt-2'>
+                        <div class="paisa_container_LB mt-3" id='div-gpt-ad-01'>
+                            <script>
+                                googletag.cmd.push(function () {
+                                    googletag.display('div-gpt-ad-01');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <picture style="
     display: flex;
     justify-content: center;
     place-items: center;
     width: 100%;
   height: auto;
 ">
-					 {% image self.Featured_image fill-820x421 as blog_img %}
-					{% image self.Featured_image fill-820x421 format-webp as webp_blog_img %}
-					<source srcset="{{ webp_blog_img.url }}" type="image/webp">
-					<img  style ="object-fit: cover;width: 100%;height: auto;"class="rounded mt-3 custom_size_img" src="{{ blog_img.url }}" alt="{{ blog_img.alt }}">
-				</picture>
-      </div>
-    </div>
-	</div>
-</section>
-<!-- ======================= Inner intro END ======================= -->
+                        {% image self.Featured_image fill-820x421 as blog_img %}
+                        {% image self.Featured_image fill-820x421 format-webp as webp_blog_img %}
+                        <source srcset="{{ webp_blog_img.url }}" type="image/webp">
+                        <img width="8" height="6" class="rounded mt-3 custom_size_img" src="{{ blog_img.url }}"
+                             alt="{{ blog_img.alt }}">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======================= Inner intro END ======================= -->
 
-<!-- ======================= Main START ======================= -->
-<section class="pt-0">
-	<div class="container position-relative adscontainer">
-		<div class="row">
-			<!-- Main Content START -->
-			<div class="col-lg-9 mx-auto">
-				{{page.content}}
-
-
-				{% if self.quote %}
-				<!-- blockquote -->
-				<figure class="bg-primary-soft p-3 p-md-5 my-5">
-				  <blockquote class="blockquote">
-				    <p>{{ self.quote }}</p>
-				  </blockquote>
-				  <figcaption class="blockquote-footer">
-				    Unknown
-				  </figcaption>
-				</figure>
-				{% endif %}
+    <!-- ======================= Main START ======================= -->
+    <section class="pt-0">
+        <div class="container position-relative adscontainer">
+            <div class="row">
+                <!-- Main Content START -->
+                <div class="col-lg-9 mx-auto">
+                    {{page.content}}
 
 
-        <!-- Next prev post START -->
-				<div class="row g-0 mt-5 mx-0 border-top border-bottom">
-					<div class="col-sm-6 py-3 py-md-4">
-						<div class="d-flex align-items-center position-relative">
-							<!-- Icon -->
-							<div class="bg-danger py-1">
-								<i class="bi bi-chevron-compact-left fs-3 text-white px-1 rtl-flip"></i>
-							</div>
-							<!-- Title -->
+                    {% if self.quote %}
+                    <!-- blockquote -->
+                    <figure class="bg-primary-soft p-3 p-md-5 my-5">
+                        <blockquote class="blockquote">
+                            <p>{{ self.quote }}</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Unknown
+                        </figcaption>
+                    </figure>
+                    {% endif %}
 
-							<div class="ms-3">
-								{% for item in review_posts %}
-							{% if forloop.first %}
-								<h3 class="m-0" style="font-size:0.9375rem;" > <a href="{{ item.url }}" class="stretched-link btn-link text-reset">{{ item.title }}</a></h3>
-								{% endif %}{% endfor %}
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 py-3 py-md-4 text-sm-end">
-						<div class="d-flex align-items-center position-relative">
-							<!-- Title -->
-							<div class="me-3">
-								{% for item in review_posts %}
-								{% if forloop.last %}
-								<h3 style="font-size:0.9375rem;" class="m-0"> <a href="{{ item.url }}" class="stretched-link btn-link text-reset">{{ item.title }}</a></h3>
-								{% endif %}{% endfor %}
-							</div>
-							<!-- Icon -->
-							<div class="bg-danger py-1">
-								<i class="bi bi-chevron-compact-right fs-3 text-white px-1 rtl-flip"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Next prev post START -->
 
-			</div>
-			<!-- Main Content END -->
-		</div>
-	</div>
-</section>
-<!-- ======================= Main END ======================= -->
+                    <!-- Next prev post START -->
+                    <div class="row g-0 mt-5 mx-0 border-top border-bottom">
+                        <div class="col-sm-6 py-3 py-md-4">
+                            <div class="d-flex align-items-center position-relative">
+                                <!-- Icon -->
+                                <div class="bg-danger py-1">
+                                    <i class="bi bi-chevron-compact-left fs-3 text-white px-1 rtl-flip"></i>
+                                </div>
+                                <!-- Title -->
 
-<!-- ======================= Tag and share END ======================= -->
-<section class="pt-0">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-9 mx-auto">
-				<div class="text-center">
-					<!-- Share -->
-					<div class="list-group-inline list-unstyled">
-						<h4 style="font-size: inherit;" class="mt-2 me-4 d-inline-block"><i class="fas fa-share-alt me-2"></i>Share on:</h4>
-						<ul class="list-inline list-unstyled d-inline-block">
-							<li class="list-inline-item"><a href="https://www.facebook.com/sharer.php?u={{ page.full_url}}" class="me-3 text-body">Facebook</a></li>
-							<li class="list-inline-item"><a href="https://twitter.com/intent/tweet?text={{page.title}}" class="me-3 text-body">Twitter</a></li>
-						</ul>
-					</div>
-				</div>
-			</div> <!-- row END -->
-		</div>
-	</div>
-</section>
-<!-- ======================= Tag and share END ======================= -->
+                                <div class="ms-3">
+                                    {% for item in review_posts %}
+                                    {% if forloop.first %}
+                                    <h3 class="m-0" style="font-size:0.9375rem;"><a href="{{ item.url }}"
+                                                                                    class="stretched-link btn-link text-reset">{{item.title }}</a></h3>
+                                    {% endif %}{% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 py-3 py-md-4 text-sm-end">
+                            <div class="d-flex align-items-center position-relative">
+                                <!-- Title -->
+                                <div class="me-3">
+                                    {% for item in review_posts %}
+                                    {% if forloop.last %}
+                                    <h3 style="font-size:0.9375rem;" class="m-0"><a href="{{ item.url }}"
+                                                                                    class="stretched-link btn-link text-reset">{{item.title }}</a></h3>
+                                    {% endif %}{% endfor %}
+                                </div>
+                                <!-- Icon -->
+                                <div class="bg-danger py-1">
+                                    <i class="bi bi-chevron-compact-right fs-3 text-white px-1 rtl-flip"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Next prev post START -->
+
+                </div>
+                <!-- Main Content END -->
+            </div>
+        </div>
+    </section>
+    <!-- ======================= Main END ======================= -->
+
+    <!-- ======================= Tag and share END ======================= -->
+    <section class="pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 mx-auto">
+                    <div class="text-center">
+                        <!-- Share -->
+                        <div class="list-group-inline list-unstyled">
+                            <h4 style="font-size: inherit;" class="mt-2 me-4 d-inline-block"><i
+                                    class="fas fa-share-alt me-2"></i>Share on:</h4>
+                            <ul class="list-inline list-unstyled d-inline-block">
+                                <li class="list-inline-item"><a
+                                        href="https://www.facebook.com/sharer.php?u={{ page.full_url}}"
+                                        class="me-3 text-body">Facebook</a></li>
+                                <li class="list-inline-item"><a
+                                        href="https://twitter.com/intent/tweet?text={{page.title}}"
+                                        class="me-3 text-body">Twitter</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- row END -->
+            </div>
+        </div>
+    </section>
+    <!-- ======================= Tag and share END ======================= -->
 
 </main>
 <!-- **************** MAIN CONTENT END **************** -->

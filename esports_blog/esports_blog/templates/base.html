@@ -35,7 +35,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/ads.css' %}">
 
 	{% endcompress %}
-	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+	<script async defer src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 	{% compress js inline %}
 	<script>
 	  window.googletag = window.googletag || {cmd: []};
@@ -85,7 +85,15 @@
                             }, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
                         }
                     });
-		googletag.pubads().enableSingleRequest();
+		googletag.pubads().enableLazyLoad({
+          // Fetch slots within 5 viewports.
+          fetchMarginPercent: 500,
+          // Render slots within 2 viewports.
+          renderMarginPercent: 200,
+          // Double the above values on mobile, where viewports are smaller
+          // and users tend to scroll faster.
+          mobileScaling: 2.0
+        });
 		googletag.enableServices();
 		googletag.display('div-gpt-ad-02');
 		googletag.display('div-gpt-ad-03');
@@ -299,7 +307,7 @@ JS libraries, plugins and custom scripts -->
 
 </body>
 
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S2S4VEZHG8"></script>
+	<script async defer src="https://www.googletagmanager.com/gtag/js?id=G-S2S4VEZHG8"></script>
 	{% compress js inline %}
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->

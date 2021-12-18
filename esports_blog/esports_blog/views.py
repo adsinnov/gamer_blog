@@ -29,7 +29,7 @@ def search(request):
         search_results = Page.objects.none()
 
     # Render template
-    return render(request, 'search_results.html', {
+    return render(request, 'search_query.html', {
         'search_query': search_query,
         'search_results': search_results,
     })
