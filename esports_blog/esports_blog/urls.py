@@ -26,6 +26,7 @@ urlpatterns = [
 
 
 if settings.DEBUG:
+    import debug_toolbar
     from django.conf.urls.static import static
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
     # Serve static and media files from development server
@@ -37,6 +38,8 @@ urlpatterns = urlpatterns + [
     # Wagtail's page serving mechanism. This should be the last pattern in
     # the list:
     path("", include(wagtail_urls)),
+    # path('__debug__/', include(debug_toolbar.urls)),
+
 
     # Alternatively, if you want Wagtail pages to be served from a subpath
     # of your site, rather than the site root:

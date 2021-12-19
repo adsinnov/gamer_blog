@@ -51,15 +51,7 @@
                         </li>
                         <li class="nav-item mb-1">{{page.date}}</li>
                     </ul>
-                    <div class='d-flex justify-content-center mt-2'>
-                        <div class="paisa_container_LB mt-3" id='div-gpt-ad-01'>
-                            <script>
-                                googletag.cmd.push(function () {
-                                    googletag.display('div-gpt-ad-01');
-                                });
-                            </script>
-                        </div>
-                    </div>
+
                     <picture style="
     display: flex;
     justify-content: center;
@@ -78,7 +70,9 @@
         </div>
     </section>
     <!-- ======================= Inner intro END ======================= -->
-
+    <div class='d-flex justify-content-center mt-2'>
+        <div class="paisa_container_LB mt-3" id='div-gpt-ad-01'></div>
+    </div>
     <!-- ======================= Main START ======================= -->
     <section class="pt-0">
         <div class="container position-relative adscontainer">
@@ -126,8 +120,8 @@
                                 <div class="me-3">
                                     {% for item in review_posts %}
                                     {% if forloop.last %}
-                                    <h3 style="font-size:0.9375rem;" class="m-0"><a href="{{ item.url }}"
-                                                                                    class="stretched-link btn-link text-reset">{{item.title }}</a></h3>
+                                    <h3 style="font-size:0.9375rem;" class="m-0">
+                                        <a href="{{ item.url }}" class="stretched-link btn-link text-reset">{{item.title }}</a></h3>
                                     {% endif %}{% endfor %}
                                 </div>
                                 <!-- Icon -->

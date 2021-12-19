@@ -6,8 +6,8 @@
 
             <figure class="figure">
               <picture>
-                    {% image value.blog_image fill-990x556 as blog_big_img %}
-					{% image value.blog_image fill-990x556 format-webp as webp_blog_big_img %}
+                    {% image value.blog_image fill-800x400 as blog_big_img %}
+					{% image value.blog_image fill-800x400 format-webp as webp_blog_big_img %}
 					<source srcset="{{ webp_blog_big_img.url }}" type="image/webp">
 					<img width="8" height="6" class="rounded mt-1" src="{{ blog_big_img.url }}" alt="{{ blog_big_img.alt }}">
 				</picture>

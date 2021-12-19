@@ -25,9 +25,10 @@ def search(request):
 
         # Log the query so Wagtail can suggest promoted results
         Query.get(search_query).add_hit()
+        return render(request, "templates/search_query.html")
     else:
         search_results = Page.objects.none()
-
+        return render(request, "templates/search_query.html")
     # Render template
     return render(request, 'search_query.html', {
         'search_query': search_query,

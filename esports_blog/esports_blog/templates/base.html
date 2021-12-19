@@ -5,41 +5,47 @@
 <html lang="en">
 <head>
 
-	<title>{{ page.title }}</title>
-	<!-- Meta Tags -->
-	<meta charset="utf-8">
-	<meta name="viewport"  content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="author" content="nuegamers.com">
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="{{page.seo_title}}" />
-	<meta property="og:description" content="For New Gamers" />
-	<meta property="og:url" content="https://www.nuegamers.com/" />
-	<meta property="og:site_name" content="Nue Gamers" />
-	<meta name="description" content="{{page.search_description}}">
-	<meta name="keywords" content="{{page.keywords}}">
+    <title>{{ page.title }}</title>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="nuegamers.com">
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{{page.seo_title}}"/>
+    <meta property="og:description" content="For New Gamers"/>
+    <meta property="og:url" content="https://www.nuegamers.com/"/>
+    <meta property="og:site_name" content="Nue Gamers"/>
+    <meta name="description" content="{{page.search_description}}">
+    <meta name="keywords" content="{{page.keywords}}">
 
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="{% static 'assets/images/logos/favicon.svg' %}">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/images/logos/favicon.svg' %}">
 
 
-	{% compress css inline %}
+    {% compress css inline %}
 
-	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/font-awesome/css/all.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/tiny-slider/tiny-slider.css' %}">
-	<!-- Theme CSS -->
-	<link id="style-switch" rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/ads.css' %}">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/font-awesome/css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/tiny-slider/tiny-slider.css' %}">
+    <!-- Theme CSS -->
+    <link id="style-switch" rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/ads.css' %}">
 
-	{% endcompress %}
-	<script async defer src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-	{% compress js inline %}
-	<script>
-	  window.googletag = window.googletag || {cmd: []};
-	  googletag.cmd.push(function() {
+    {% endcompress %}
+    {% compress js inline %}
+    <script defer async>
+    var headID = document.getElementsByTagName("head")[0];
+    var newScript = document.createElement('script');
+    newScript.type = 'text/javascript';
+    newScript.src = 'https://securepubads.g.doubleclick.net/tag/js/gpt.js';
+    headID.appendChild(newScript);
+
+
+            window.googletag = window.googletag || {cmd: []};
+            googletag.cmd.push(function () {
                 var REFRESH_KEY = "refresh";
                 var REFRESH_VALUE = "true";
 
@@ -56,7 +62,7 @@
                         ]
                     ) //other
                     .build();
-                    var AdSize2 = googletag
+                var AdSize2 = googletag
                     .sizeMapping()
                     .addSize([992, 0], [[728, 90]]) //desktop
                     .addSize([768, 0], [[320, 50]]) //tablet
@@ -69,12 +75,12 @@
                         ]
                     ) //other
                     .build();
-		googletag.defineSlot('/21742552194/NueGamers/Leaderboard', [300,250], 'div-gpt-ad-01').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize2).addService(googletag.pubads());
-		googletag.defineSlot('/21742552194/NueGamers/MTF_1', [300,250], 'div-gpt-ad-02').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize1).addService(googletag.pubads());
-		googletag.defineSlot('/21742552194/NueGamers/MTF_2', [300,250], 'div-gpt-ad-03').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize1).addService(googletag.pubads());
-        googletag.defineSlot('/21742552194/NueGamers/MTF_3', [300,250], 'div-gpt-ad-04').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize1).addService(googletag.pubads());
-        googletag.defineSlot('/21742552194/NueGamers/BottomOverlay', [300,250], 'div-gpt-ad-06').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize2).addService(googletag.pubads());
-        var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 30;
+                googletag.defineSlot('/21742552194/NueGamers/Leaderboard', [300, 250], 'div-gpt-ad-01').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize2).addService(googletag.pubads());
+                googletag.defineSlot('/21742552194/NueGamers/MTF_1', [300, 250], 'div-gpt-ad-02').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize1).addService(googletag.pubads());
+                googletag.defineSlot('/21742552194/NueGamers/MTF_2', [300, 250], 'div-gpt-ad-03').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize1).addService(googletag.pubads());
+                googletag.defineSlot('/21742552194/NueGamers/MTF_3', [300, 250], 'div-gpt-ad-04').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize1).addService(googletag.pubads());
+                googletag.defineSlot('/21742552194/NueGamers/BottomOverlay', [300, 250], 'div-gpt-ad-06').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(AdSize2).addService(googletag.pubads());
+                var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 30;
                 googletag
                     .pubads()
                     .addEventListener("impressionViewable", function (event) {
@@ -85,23 +91,25 @@
                             }, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
                         }
                     });
-		googletag.pubads().enableLazyLoad({
-          // Fetch slots within 5 viewports.
-          fetchMarginPercent: 500,
-          // Render slots within 2 viewports.
-          renderMarginPercent: 200,
-          // Double the above values on mobile, where viewports are smaller
-          // and users tend to scroll faster.
-          mobileScaling: 2.0
-        });
-		googletag.enableServices();
-		googletag.display('div-gpt-ad-02');
-		googletag.display('div-gpt-ad-03');
-		googletag.display('div-gpt-ad-04');
+                googletag.pubads().enableLazyLoad({
+                    // Fetch slots within 5 viewports.
+                    fetchMarginPercent: 500,
+                    // Render slots within 2 viewports.
+                    renderMarginPercent: 200,
+                    // Double the above values on mobile, where viewports are smaller
+                    // and users tend to scroll faster.
+                    mobileScaling: 2.0
+                });
+                googletag.enableServices();
+                googletag.display('div-gpt-ad-01');
+                googletag.display('div-gpt-ad-02');
+                googletag.display('div-gpt-ad-03');
+                googletag.display('div-gpt-ad-04');
 
-	  });
-	</script>
-	{% endcompress %}
+            });
+
+    </script>
+    {% endcompress %}
 </head>
 
 <body>
@@ -109,55 +117,65 @@
 <!-- =======================
 Header START -->
 <header class="navbar-light navbar-sticky header-static">
-	<!-- Logo Nav START -->
-	<nav class="navbar navbar-expand-lg">
-		<div class="container">
-			<!-- Logo START -->
-			<a class="navbar-brand" href="/">
-				<img style="width: 105.53px;height: 40px;" class="navbar-brand-item light-mode-item" src="{% static 'assets/images/logos/logo-light.svg'%}" alt="logo">
-			</a>
-			<!-- Logo END -->
-			 <button id="myBtn" style="width: 99.47px; height: 34.28px" class="btn btn-sm btn-danger mb-0">Install App</button>
-			<!-- Responsive navbar toggler -->
-			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-			  <span class="text-body h6 d-none d-sm-inline-block">Menu</span>
+    <!-- Logo Nav START -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Logo START -->
+            <a class="navbar-brand" href="/">
+                <img style="width: 105.53px;height: 40px;" class="navbar-brand-item light-mode-item"
+                     src="{% static 'assets/images/logos/logo-light.svg'%}" alt="logo">
+            </a>
+            <!-- Logo END -->
+            <button id="myBtn" style="width: 99.47px; height: 34.28px" class="btn btn-sm btn-danger mb-0">Install App
+            </button>
+            <!-- Responsive navbar toggler -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="text-body h6 d-none d-sm-inline-block">Menu</span>
 
-			  <span class="navbar-toggler-icon"></span>
-		  </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-			<!-- Main navbar START -->
-			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<!-- Nav Search START -->
-				<div class="nav mt-3 mt-lg-3 px-4 flex-nowrap align-items-center">
-					<div class="nav-item w-100">
-						<form action="{% url 'search' %}" method="get" class="rounded position-relative">
-							<input class="form-control pe-5 bg-light" type="search" name="query" value="{{ search_query }}" placeholder="Search the blog" aria-label="Search">
-							<button class="btn bg-transparent px-2 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit" aria-label="search"><i class="bi bi-search fs-5"> </i></button>
-						</form>
-					</div>
-				</div>
-				<!-- Nav Search END -->
-				<ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <!-- Main navbar START -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <!-- Nav Search START -->
+                <div class="nav mt-3 mt-lg-3 px-4 flex-nowrap align-items-center">
+                    <div class="nav-item w-100">
+                        <form action="{% url 'search' %}" method="get" class="rounded position-relative">
+                            <input class="form-control pe-5 bg-light" type="search" name="query"
+                                   value="{{ search_query }}" placeholder="Search the blog" aria-label="Search">
+                            <button class="btn bg-transparent px-2 py-0 position-absolute top-50 end-0 translate-middle-y"
+                                    type="submit" aria-label="search"><i class="bi bi-search fs-5"> </i></button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Nav Search END -->
+                <ul class="navbar-nav navbar-nav-scroll ms-auto">
 
-					<!-- Nav item 1 Demos -->
+                    <!-- Nav item 1 Demos -->
 
-						<a role="button"  class="nav-link" href="/" id="homeMenu" aria-haspopup="true" aria-expanded="false" >Home</a>
-						<a role="button"  class="nav-link" href="/reviews/" id="Reviews" aria-haspopup="true" aria-expanded="false" >Reviews</a>
-						<a role="button"  class="nav-link" href="/ps4/" id="Ps4" aria-haspopup="true" aria-expanded="false" >PS4</a>
-						<a role="button"  class="nav-link" href="/xbox/" id="xbox" aria-haspopup="true" aria-expanded="false" >Xbox</a>
-						<a role="button" class="nav-link" href="/pc-games/" id="PC" aria-haspopup="true" aria-expanded="false" >PC</a>
-						<a role="button"  class="nav-link" href="/mobile-games/" id="mobile" aria-haspopup="true" aria-expanded="false" >Mobile</a>
+                    <a role="button" class="nav-link" href="/" id="homeMenu" aria-haspopup="true" aria-expanded="false">Home</a>
+                    <a role="button" class="nav-link" href="/reviews/" id="Reviews" aria-haspopup="true"
+                       aria-expanded="false">Reviews</a>
+                    <a role="button" class="nav-link" href="/ps4/" id="Ps4" aria-haspopup="true" aria-expanded="false">PS4</a>
+                    <a role="button" class="nav-link" href="/xbox/" id="xbox" aria-haspopup="true"
+                       aria-expanded="false">Xbox</a>
+                    <a role="button" class="nav-link" href="/pc-games/" id="PC" aria-haspopup="true"
+                       aria-expanded="false">PC</a>
+                    <a role="button" class="nav-link" href="/mobile-games/" id="mobile" aria-haspopup="true"
+                       aria-expanded="false">Mobile</a>
 
-				</ul>
-			</div>
-			<!-- Main navbar END -->
-<!--			&lt;!&ndash; Dark mode switch &ndash;&gt;-->
-<!--			<div class="modeswitch ms-4" id="darkModeSwitch">-->
-<!--				<div class="switch"></div>-->
-<!--			</div>-->
-		</div>
-	</nav>
-	<!-- Logo Nav END -->
+                </ul>
+            </div>
+            <!-- Main navbar END -->
+            <!--			&lt;!&ndash; Dark mode switch &ndash;&gt;-->
+            <!--			<div class="modeswitch ms-4" id="darkModeSwitch">-->
+            <!--				<div class="switch"></div>-->
+            <!--			</div>-->
+        </div>
+    </nav>
+    <!-- Logo Nav END -->
 </header>
 {% endcache %}
 <!-- =======================
@@ -169,41 +187,46 @@ Header END -->
 Footer START -->
 {% cache 2592000 footer page.id %}
 <footer>
-	<div class="container">
-		<!-- About and Newsletter START -->
-		<div class="row bg-dark py-5 mx-0 card-header align-items-center text-center text-md-start">
-			<!-- Copyright -->
-			<div class="col-md-5 mb-3 mb-md-0">
-				<div class="text-primary-hover text-muted">©2021 <a href="#" class="text-reset btn-link" target="_blank">GamesIndian</a>. All rights reserved
-				</div>
-			</div>
-			<!-- Logo -->
-			<div class="col-md-3 mb-3 mb-md-0">
-				<img style="width: 320px; height: 121px;" src="{% static 'assets/images/logos/logo-dark.svg'%}" alt="footer logo">
-			</div>
-			<!-- Social links -->
-			<div class="col-md-4">
-				<ul class="nav text-primary-hover justify-content-center justify-content-md-end">
-					<li class="nav-item">
-						<a aria-label="Facebook" class="nav-link px-2 fs-5" href="#"><i class="fab fa-facebook-square"></i></a>
-					</li>
-					<li class="nav-item">
-						<a aria-label="Twitter" class="nav-link px-2 fs-5" href="#"><i class="fab fa-twitter-square"></i></a>
-					</li>
-					<li class="nav-item">
-						<a aria-label="Linkedin" class="nav-link px-2 fs-5" href="#"><i class="fab fa-linkedin"></i></a>
-					</li>
-					<li class="nav-item">
-						<a aria-label="Youtube" class="nav-link px-2 fs-5" href="#"><i class="fab fa-youtube-square"></i></a>
-					</li>
-					<li class="nav-item">
-						<a aria-label="Vimeo" class="nav-link ps-2 pe-0 fs-5" href="#"><i class="fab fa-vimeo"></i></a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<!-- About and Newsletter END -->
-	</div>
+    <div class="container">
+        <!-- About and Newsletter START -->
+        <div class="row bg-dark py-5 mx-0 card-header align-items-center text-center text-md-start">
+            <!-- Copyright -->
+            <div class="col-md-5 mb-3 mb-md-0">
+                <div class="text-primary-hover text-muted">©2021 <a href="#" class="text-reset btn-link"
+                                                                    target="_blank">Nue Gamers</a>. All rights reserved
+                </div>
+            </div>
+            <!-- Logo -->
+            <div class="col-md-3 mb-3 mb-md-0">
+                <img style="width: 320px; height: 121px;" src="{% static 'assets/images/logos/logo-dark.svg'%}"
+                     alt="footer logo">
+            </div>
+            <!-- Social links -->
+            <div class="col-md-4">
+                <ul class="nav text-primary-hover justify-content-center justify-content-md-end">
+                    <li class="nav-item">
+                        <a aria-label="Facebook" class="nav-link px-2 fs-5" href="#"><i
+                                class="fab fa-facebook-square"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a aria-label="Twitter" class="nav-link px-2 fs-5" href="#"><i
+                                class="fab fa-twitter-square"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a aria-label="Linkedin" class="nav-link px-2 fs-5" href="#"><i class="fab fa-linkedin"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a aria-label="Youtube" class="nav-link px-2 fs-5" href="#"><i
+                                class="fab fa-youtube-square"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a aria-label="Vimeo" class="nav-link ps-2 pe-0 fs-5" href="#"><i class="fab fa-vimeo"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- About and Newsletter END -->
+    </div>
 </footer>
 
 <!-- =======================
@@ -226,103 +249,113 @@ JS libraries, plugins and custom scripts -->
 
 {% endcache %}
 
- <!-- Trigger/Open The Modal -->
+<!-- Trigger/Open The Modal -->
 
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
-        <!-- Modal content -->
-        <div class="modal-content mt-1">
+    <!-- Modal content -->
+    <div class="modal-content mt-1">
 
-<!--            <span class="close btn-close btn-close-white opacity-9 p-3">&times;</span>-->
-            <div class="card">
-                <div style="display: flex; justify-content: space-between;">
-                <h5 class="card-header">Install Nue Gamers App</h5>  <button type="button" class="close btn-close" data-bs-dismiss="alert"
-                aria-label="Close">x</button></div>
+        <!--            <span class="close btn-close btn-close-white opacity-9 p-3">&times;</span>-->
+        <div class="card">
+            <div style="display: flex; justify-content: space-between;">
+                <h5 class="card-header">Install Nue Gamers App</h5>
+                <button type="button" class="close btn-close" data-bs-dismiss="alert"
+                        aria-label="Close">x
+                </button>
+            </div>
 
-                <div class="card-body" id="iOS_install" style="display: none;">
-                    <p class="card-text">Install the app on your device to easily access it anytime. No app store. No
-                        hassle. Light weight</p>
-                    <ul>
-                        <li>Tap on <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="18.000000pt"
-                                height="15.000000pt" viewBox="0 0 38.000000 53.000000"
-                                preserveAspectRatio="xMidYMid meet">
+            <div class="card-body" id="iOS_install" style="display: none;">
+                <p class="card-text">Install the app on your device to easily access it anytime. No app store. No
+                    hassle. Light weight</p>
+                <ul>
+                    <li>Tap on
+                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="18.000000pt"
+                             height="15.000000pt" viewBox="0 0 38.000000 53.000000"
+                             preserveAspectRatio="xMidYMid meet">
 
-                                <g transform="translate(0.000000,53.000000) scale(0.100000,-0.100000)" fill="#000000"
-                                    stroke="none">
-                                    <path d="M141 486 c-48 -49 -43 -72 6 -24 l33 32 0 -152 c0 -95 4 -152 10
+                            <g transform="translate(0.000000,53.000000) scale(0.100000,-0.100000)" fill="#000000"
+                               stroke="none">
+                                <path d="M141 486 c-48 -49 -43 -72 6 -24 l33 32 0 -152 c0 -95 4 -152 10
                            -152 6 0 10 57 10 152 l0 152 34 -33 c19 -18 36 -28 40 -23 3 5 -16 28 -43 50
-                           l-48 41 -42 -43z" />
-                                    <path d="M0 190 l0 -190 190 0 190 0 0 190 0 190 -70 0 c-40 0 -70 -4 -70 -10
+                           l-48 41 -42 -43z"/>
+                                <path d="M0 190 l0 -190 190 0 190 0 0 190 0 190 -70 0 c-40 0 -70 -4 -70 -10
                            0 -6 27 -10 60 -10 l60 0 0 -170 0 -170 -170 0 -170 0 0 170 0 170 60 0 c33 0
-                           60 4 60 10 0 6 -30 10 -70 10 l-70 0 0 -190z" />
-                                </g>
-                            </svg></li>
-                        <li> Add to homescreen (Scroll Down)</li>
-                    </ul>
-                </div>
-                <div class="card-body" id="Andriod_install" style="display: none;">
-                    <p class="card-text">Install the app on your device to easily access it anytime. No app store. No
-                        hassle. Light weight</p>
-                    <button id="butInstall" class="btn btn-sm btn-danger">Add To Home Screen</button>
-                </div>
-				<div class="card-body" id="Cannot_Install" style="display: none;">
-                    <p class="card-text">Your Browser does not support PWA Technology switch to chrome.</p>
-                </div>
+                           60 4 60 10 0 6 -30 10 -70 10 l-70 0 0 -190z"/>
+                            </g>
+                        </svg>
+                    </li>
+                    <li> Add to homescreen (Scroll Down)</li>
+                </ul>
+            </div>
+            <div class="card-body" id="Andriod_install" style="display: none;">
+                <p class="card-text">Install the app on your device to easily access it anytime. No app store. No
+                    hassle. Light weight</p>
+                <button id="butInstall" class="btn btn-sm btn-danger">Add To Home Screen</button>
+            </div>
+            <div class="card-body" id="Cannot_Install" style="display: none;">
+                <p class="card-text">Your Browser does not support PWA Technology switch to chrome.</p>
             </div>
         </div>
-
     </div>
 
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
+</div>
 
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
 
-        // When the user clicks the button, open the modal
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
             modal.style.display = "none";
         }
+    }
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-    </script>
+</script>
 
 
 </body>
 
-	<script async defer src="https://www.googletagmanager.com/gtag/js?id=G-S2S4VEZHG8"></script>
-	{% compress js inline %}
+<script async defer src="https://www.googletagmanager.com/gtag/js?id=G-S2S4VEZHG8"></script>
+{% compress js inline %}
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
 
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		  gtag('config', 'G-S2S4VEZHG8');
-		</script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-S2S4VEZHG8');
+</script>
 <script src="{% static 'assets/js/pwa.js' %}"></script>
-	{% endcompress %}
+{% endcompress %}
 <!--	&lt;!&ndash; Google Font &ndash;&gt;-->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet">
 
 
 </html>

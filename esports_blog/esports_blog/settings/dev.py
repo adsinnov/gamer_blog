@@ -8,7 +8,7 @@ DEBUG = True
 SECRET_KEY = 'django-insecure-%_ai1!n#6qen$ml+ai5#@(7&*0vo(a)a31&zp0cgzai_h)c%)m'
 
 # SECURITY WARNING: define the correct hosts in production!
-ALLOWED_HOSTS = ['*'] 
+ALLOWED_HOSTS = ['*']
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -33,14 +33,13 @@ MIDDLEWARE = MIDDLEWARE + [
 # )
 cwd = os.getcwd()
 CACHES = {
-    "default" : {
-        "BACKEND" : "django.core.cache.backends.filebased.FileBasedCache",
-        "LOCATION" : f"{cwd}/.cache"
+    "default": {
+        # "BACKEND" : "django.core.cache.backends.filebased.FileBasedCache",
+        # "LOCATION" : f"{cwd}/.cache"
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     }
 }
 
-
-WAGTAILSEARCH_RESULTS_TEMPLATE = 'templates/search_query.html'
 
 try:
     from .local import *

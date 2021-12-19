@@ -1,10 +1,12 @@
 .paisa_container{
 width:728px;
 height:90px;
+background-color: #84828240;
 }
 .paisa_container_LB{
 width:728px;
 height:90px;
+  background-color: #84828240;
 }
 
 @media only screen and (max-width: 600px) {
@@ -51,4 +53,11 @@ height:50px;
 
 img {
   width: 100%;
+}
+
+.block-Blog_image{
+   display: flex;
+    place-items:center;
+    justify-content:center;
+
 }
