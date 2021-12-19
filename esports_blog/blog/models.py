@@ -601,3 +601,4 @@ class Mobile_Details(Page):
         cache.delete(key)
 
         return super().save(*args , **kwargs)
+
